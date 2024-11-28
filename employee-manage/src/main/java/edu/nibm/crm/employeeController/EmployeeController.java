@@ -1,6 +1,11 @@
 package edu.nibm.crm.employeeController;
 
 import edu.nibm.crm.dto.Employee;
+import edu.nibm.crm.entity.EmployeeEntity;
+import edu.nibm.crm.service.EmployeeServiceImpl;
+import edu.nibm.crm.service.impl.EmployeeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,18 +13,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/emp-controller")
+@RequiredArgsConstructor
 public class EmployeeController {
 
-    List<Employee> employeeList = new ArrayList();
+   final EmployeeService service;
 
     @PostMapping("add-employee")
     public void addEmployee(@RequestBody Employee employee) {
-        employeeList.add(employee);
+        service.addEmployee(employee);
     }
 
     @GetMapping("get-all")
-    public List<Employee> getAll(){
-        return employeeList;
+    public List<EmployeeEntity> getAll(){
+        return service.getAll();
     }
 
 }
