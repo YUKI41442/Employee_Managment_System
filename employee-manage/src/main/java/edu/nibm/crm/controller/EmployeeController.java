@@ -1,11 +1,9 @@
-package edu.nibm.crm.employeeController;
+package edu.nibm.crm.controller;
 
 import edu.nibm.crm.dto.Employee;
 import edu.nibm.crm.entity.EmployeeEntity;
-import edu.nibm.crm.service.EmployeeServiceImpl;
 import edu.nibm.crm.service.impl.EmployeeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -24,7 +22,8 @@ public class EmployeeController {
     }
 
     @GetMapping("get-all")
-    public List<EmployeeEntity> getAll(){
+    public List<Employee> getAll(){
+        new ArrayList<>();
         return service.getAll();
     }
 

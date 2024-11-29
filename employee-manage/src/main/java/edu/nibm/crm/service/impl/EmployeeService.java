@@ -11,5 +11,5 @@ public interface EmployeeService {
     List<Employee> employeeList = new ArrayList();
 
     void addEmployee(Employee employee);
-    List<EmployeeEntity> getAll();
+    List<Employee> getAll();
 }
