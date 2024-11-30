@@ -39,7 +39,7 @@ public class EmployeeController {
     @PutMapping("/update-emp")
     public void updateEmployee(@RequestBody Employee employee) {
         service.updateEmployee(employee);
-        }
+
     }
 
 }
